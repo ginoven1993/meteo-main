@@ -1,6 +1,20 @@
-# Meteo
+# Bennu Weather App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
+
+## Decompress the project
+
+## Open with VS code
+
+## Open your terminal 
+
+## Run command :
+  1-  npm install
+  2-  npm install -g @angular/cli
+
+##  Run Command : ng s -o 
+
+## In your navigator, inspect and choose Iphone 14 pro Max
 
 ## Development server
 
