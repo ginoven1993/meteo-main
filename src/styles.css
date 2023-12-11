@@ -1,0 +1,613 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('/node_modules/weather-icons/css/weather-icons.min.css');
+
+.swatch_1{
+    background: #3879e0;
+}
+.swatch_2{
+    background: #03030e;
+}
+.swatch_3{
+    background: #e4f5fd;
+}
+.swatch_4{
+    background: #2a60b8;
+}
+.swatch_5{
+    background: #aac2df;
+}
+.swatch_6{
+    background: #3c405c;
+}
+.swatch_7{
+    background: #986580;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poiret One", sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 430px;
+    max-height: 932px; 
+    margin: auto; 
+}
+.page_one{
+    background: #10103B;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.header{
+    width: 100%;
+    min-height: 5vh;
+    padding: 0 35px;
+    display: flex;
+    align-items: center;
+}
+
+.menu i{
+    color: #fff;
+    font-size: 34px;
+}
+.title{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.title h6{
+    color: #fff;
+    font-size: 20px;
+    font-family: "Poiret One", sans-serif;
+}
+.weather{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.weather .icon{
+    width: 14%;
+    display: flex;
+    justify-content: center;
+}
+.weather .icon i{
+    font-size: 25px;
+    color: #fff;
+}
+.today{
+    line-height: 30px;
+}
+.today h4{
+    font-size: 25px;
+    color: #fff;
+    font-family: "Poiret One", sans-serif;
+}
+.today p{
+    font-size: 13px;
+    color: #fff;
+    font-family: "Poiret One", sans-serif;
+}
+.temperature{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 5vh;
+    flex-direction: column;
+}
+.numero{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.numero p{
+    font-size: 85px;
+    color: #fff;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 600;
+}
+.location{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 40px;
+}
+.location p{
+    color: #fff;
+    font-size: 15px;
+}
+.description{
+    width: 65%;
+    display: flex;
+    line-height: 50px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.description span{
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6px;
+    font-weight: 600;
+    color: #fff;
+}
+.description p{
+    color: #fff;
+}
+
+.saison{
+    display: flex;
+    width: 100%;
+    min-height: 8vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.periode{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 5vh;
+}
+.indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: white;
+}
+
+.periode a{
+    text-decoration: none;
+}
+.periode p{
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+}
+.periode .next{
+    color: #2a60b8;
+    font-weight: bold;
+}
+.periode i{
+    font-size: 15px;
+}
+.periode span i{
+    color: #fff;
+    font-size: 10px;
+}
+
+/*  */
+.meteo{
+    width: 100%;
+    min-height: 22vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.meteo .container{
+    background: #1E1F45;
+    height: 16vh;
+    border-radius: 50px;
+    width: 18%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5px;
+    
+}
+.container p{
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+}
+.container .degree{
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+}
+.container .weath{
+    width: 56%;
+    height: 4vh;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #10103B;;
+}
+.weath i{
+    color: #fff;
+}
+
+.meteo .container:hover {
+    background: #fff;
+    transform: translateY(-5px); 
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.meteo .container:hover .weath i {
+    color: #4896E9;
+}
+
+.meteo .container[style="background: #fff;"]:hover {
+    background: #1E1F45;
+    transform: translateY(-5px);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.meteo .container[style="background: #fff;"]:hover .weath i {
+    color: #fff;
+}
+
+.meteo .container:hover p {
+    color: black;
+}
+
+
+/*  */
+
+.footer{
+    width: 100%;
+    min-height: 17vh;
+    padding: 0 30px;
+}
+.footer .first{
+    width: 100%;
+}
+.first p{
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+}
+.second{
+    width: 100%;
+    min-height: 13vh;
+    display: flex;
+    padding-top: 15px;
+}
+.second .temps{
+    width: 15%;
+}
+.temps p{
+    color: #fff;
+    margin-bottom: 10px;
+}
+.heure{
+    width: 85%;
+    min-height: 15vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.heure .cont{
+    width: 65%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.heure .cont .row{
+    width: 14%;
+    height: 8vh;
+    background: #1E1F45;
+    margin: 9px;
+    border-radius: 50px;
+}
+.heure p{
+    color: #fff;
+    font-size: 12px;
+}
+body.dark-mode {
+    background-color: #10103B;
+    color: #fff;
+  }
+  
+  .dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+  }
+
+/* Page two */
+.page_two{
+    background: #F3FBFF;
+}
+.menu2 i{
+    color: #4D577B;
+    font-size: 34px;
+}
+.title2{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+.title2 h6{
+    color: #4D577B;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Poiret One", sans-serif;
+}
+.icon{
+    padding: 0 35px;
+    width: 100%;
+    min-height: 9vh;
+    display: flex;
+    align-items: center;
+}
+.icon i{
+    font-size: 20px;
+}
+.titre{
+    width: 100%;
+    padding: 0 35px;
+}
+.titre p{
+    font-size: 27px; 
+}
+.titre strong{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.cast{
+    width: 100%;
+    min-height: 25vh;
+    padding: 0 35px;
+    margin-top: 30px;
+}
+.cast .container{
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.cast .container .cast1{
+    width: 100%;
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cast1 .date{
+    width: 40%;
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cast1 .date p{
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cast1 .date i{
+    font-size: 20px;
+}
+.cast1 .temp{
+    display: flex;
+    width: 40%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.temp h5{
+    color: #000;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.temp h6{
+    color: #000;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.cast .container .cast2{
+    width: 100%;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cast2 .date2{
+    width: 40%;
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cast2 .date2 p{
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cast2 .date2 h5{
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+}
+.cast2 .temp2{
+    display: flex;
+    width: 45%;
+    align-items: center;
+    justify-content: space-between;
+}
+.temp2 p{
+    color: #000;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.temp2 h5{
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.cast .container .cast3{
+    width: 100%;
+    height: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cast3 .date3{
+    width: 45%;
+    min-height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cast3 .date3 p{
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cast3 .date3 h5{
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+}
+.cast3 .temp3{
+    display: flex;
+    width: 45%;
+    align-items: center;
+    justify-content: space-between;
+}
+.temp3 p{
+    color: #000;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.temp3 h5{
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/*  */
+
+.days{
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 35px;
+}
+.daily{
+    width: 100%;
+    min-height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.jour{
+    width: 10%;
+}
+.jour p{
+    color: #000;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.jour .for{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.jour .for i{
+    color: #4795E4;
+}
+.jour .for p{
+    font-weight: 400;
+    font-size: 10px;
+}
+.time{
+    width: 10%;
+    min-height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.time i{
+    font-size: 25px;
+}
+.celsus p{
+   font-size: 17px;
+   font-weight: bold;
+}
+.pres{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    min-height: 3vh;
+}
+.pression{
+    width: 70%;
+    min-height: 3vh;
+    background: #D2E4F7;
+    border-radius: 50px;
+    display: flex;
+    justify-content: right;
+}
+.variation{
+    width: 45%;
+    min-height: 3vh;
+    background: red;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.variation2{
+    width: 80%;
+    min-height: 3vh;
+    background: red;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.variation3{
+    width: 70%;
+    min-height: 3vh;
+    background: red;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.pres2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    min-height: 3vh;
+}

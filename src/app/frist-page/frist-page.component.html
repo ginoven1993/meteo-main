@@ -1,0 +1,84 @@
+<section class="page_one">
+  <div class="header">
+    <div class="menu">
+      <i class="bi bi-list-nested"></i>
+    </div>
+    <div class="title">
+      <h6>Weather Forecast</h6>
+    </div>
+  </div>
+
+  <div class="weather">
+    <div class="icon">
+      <i class="wi wi-day-sunny"></i>
+    </div>
+    <div class="today">
+      <h4>Today</h4>
+      <p>{{Date(null)}}</p>
+    </div>
+  </div>
+
+  <div class="temperature">
+    <div class="numero">
+      <p>{{ temperature }}°</p>
+    </div>
+    <!-- <div class="location">
+      <p>Barcelone, Spain</p>
+      <i></i>
+    </div> -->
+    <div class="description">
+      <p>Feel like {{ apparentTemperature }}°</p>
+      <span> <i class="fa-solid fa-circle"></i> </span>
+      <p>{{ sunData }}</p>
+    </div>
+  </div>
+
+  <div class="saison">
+    <div class="periode" (click)="updateMeteo(false)">
+      <p>Today</p>
+      <span *ngIf="!tomorrow" class="indicator active"></span>
+    </div>
+    <div class="periode" (click)="updateMeteo(true)">
+      <p>Tomorrow</p>
+      <span *ngIf="tomorrow" class="indicator active"></span>
+    </div>
+    <div class="periode">
+      <a [routerLink]="['/semaine']" [state]="data">
+        <p class="next">
+          Next 7 Days &nbsp;<i class="fa-solid fa-chevron-right"></i>
+        </p>
+      </a>
+    </div>
+  </div>
+
+  <div class="meteo" id="meteoContainer">
+    <div *ngFor="let day of dayData" class="container today">
+      <p>{{ Hours(day.time) }} h</p>
+      <div class="weath">
+        <i class="wi wi-day-sunny"></i>
+      </div>
+      <p class="degree">{{ day.values.temperature }}°</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="first">
+      <p>Chance of rain</p>
+    </div>
+    <div class="second">
+      <div class="temps">
+        <p>sunny</p>
+        <p>rainy</p>
+        <p>heavy rain</p>
+      </div>
+      <div class="heure">
+        <div *ngFor="let day of dayData" class="cont">
+          <div class="row"></div>
+          <p>{{ Hours(day.time) }} h</p>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
+</section>

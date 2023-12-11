@@ -1,0 +1,80 @@
+<section class="page_two">
+  <div class="header">
+    <div class="menu2">
+      <i class="bi bi-list-nested"></i>
+    </div>
+    <div class="title2">
+      <h6>Weather Forecast</h6>
+    </div>
+  </div>
+
+  <div class="icon">
+    <a routerLink="/acceuil"><i class="fa-solid fa-chevron-left"></i></a>
+  </div>
+
+  <div class="titre">
+    <p>Next <strong>7 days</strong></p>
+  </div>
+
+  <div class="cast">
+    <div class="container">
+      <div class="cast1">
+        <div class="date">
+          <p id="dayOfWeek">{{DateName2(time)}}</p>
+          <i class="wi wi-night-sleet"></i>
+        </div>
+        <div class="temp">
+          <h5 id="temperature">{{ temperature }}°C</h5> &nbsp;&nbsp;
+          <h6 id="apparentTemperature">{{ apparentTemperature }}°C</h6>
+        </div>
+      </div>
+      <div class="cast2">
+        <div class="date2">
+          <p>Wind</p>
+          <h5 id="windSpeed">{{ windSpeed }}m/h</h5>
+        </div>
+        <div class="temp2">
+          <p>Humidity</p>
+          <h5 id="humidity">{{ humidity }}%</h5>
+        </div>
+      </div>
+      <div class="cast3">
+        <div class="date3">
+          <p>Visibility</p>
+          <h5 id="visibility">{{ visibility }} km</h5>
+        </div>
+        <div class="temp3">
+          <p>UV</p>
+          <h5 id="uvIndex">1</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="days" id="days">
+    <div *ngFor="let day of dayData" class="daily">
+      <div class="jour">
+        <p>{{DateName(day.time)}}</p>
+        <div class="for">
+          <i class="wi wi-raindrop"></i>
+          <p>{{ day.values.humidityAvg }}%</p>
+        </div>
+      </div>
+      <div class="time">
+        <i class="wi wi-night-sleet"></i>
+      </div>
+      <div class="celsus">
+        <p>{{ day.values.temperatureMin }}°C</p>
+      </div>
+      <div class="pres">
+        <span>--</span>
+        <div class="pression">
+          <div class="variation"></div>
+        </div>
+      </div>
+      <div class="final">
+        <h3>{{ day.values.temperatureMax }}°C</h3>
+      </div>
+    </div>
+  </div>
+</section>
